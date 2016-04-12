@@ -2,6 +2,23 @@ body{
 	padding: 50px;
 }
 
+.navbar-brand {
+  font-weight: 800;
+}
+
+.navbar-brand img {
+  width: 24px;
+}
+
+.avatar {
+  max-width: 480px;
+  margin-bottom: 20px;
+}
+
+.nav-tabs {
+  margin-bottom: 10px;
+}
+
 .type {
   margin-left: 1px;
 }
@@ -41,7 +58,7 @@ body{
   border: solid 1px #c183c1;
 }
 
-.type-electric {
+.type-eletric {
   background-color: #f8d030;
   border: solid 1px #a1871f;
 }
@@ -95,3 +112,4 @@ body{
   background-color: #ee99ac;
   border: solid 1px #9b6470;
 }
+
