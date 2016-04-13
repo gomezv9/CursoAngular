@@ -4,7 +4,7 @@
 
 	function CommentsController(){
 		
-		this.comments = [];
+		/*this.comments = [];
 		this.comment = {};
 		this.show = false;
 
@@ -22,7 +22,7 @@
 			this.comment.date = Date.now();
 			this.comments.push(this.comment);
 			this.comment = {};
-		};
+		};*/
 	}
 
 
