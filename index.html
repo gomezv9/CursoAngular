@@ -9,6 +9,7 @@
 		<script src="js/Controller-Pokemon.js"></script>
 		<script src="js/Controller-Tabs.js"></script>
 		<script src="js/Controller-Comments.js"></script>
+		<script src="js/Directive-PokemonData.js"></script>
 		<link rel="stylesheet" href="css/bootstrap.min.css">
     	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
 		<link rel="stylesheet" href="css/main.css">
@@ -55,65 +56,7 @@
 
 		            	<div ng-show="tabs.tab === 1"> <!-- Pokedex -->
 
-							<ul class="list-group">
-
-							  <li class="list-group-item"><strong>Type</strong>
-
-							  	<span class="pull-right"> 
-
-								  	<span ng-repeat="type in pkmCtrl.pokemon.type" class="label type type-{{type | lowercase}}">
-
-								  		{{type}}
-
-								  	</span>
-
-							  	</span>
-
-							  </li>
-
-							  <li class="list-group-item"><strong>Height</strong> 
-
-							  	<span class="pull-right"> 
-
-								  	<span>
-
-								  		{{pkmCtrl.pokemon.height}}
-
-								  	</span>
-
-							  	</span>
-
-							  </li>
-
-							  <li class="list-group-item"><strong>Weight</strong> 
-
-							  	<span class="pull-right"> 
-
-								  	<span>
-
-								  		{{pkmCtrl.pokemon.weight}}
-
-								  	</span>
-
-							  	</span>
-
-							  </li>
-
-							  <li class="list-group-item"><strong>Abilities</strong>
-
-							  	<span class="pull-right"> 
-
-								  	<span ng-repeat="ab in pkmCtrl.pokemon.abilities" class="label type type-dragon">
-
-								  		{{ab}}
-
-								  	</span>
-
-							  	</span>
-
-							  </li>
-
-							</ul>
+							<pokemon-data></pokemon-data>
 
 						</div> <!-- *********** -->
 
