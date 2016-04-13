@@ -113,3 +113,11 @@ body{
   border: solid 1px #9b6470;
 }
 
+.ng-invalid.ng-dirty{
+  border-color: red;
+}
+
+.ng-valid.ng-dirty{
+  border-color: green;
+}
+
