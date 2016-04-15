@@ -5,12 +5,14 @@
 		<title>Title of the document</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+		<script src="js/angular-route.min.js"></script>
 		<script src="js/Module-pokedex.js"></script>
 		<script src="js/Controller-Pokemon.js"></script>
 		<script src="js/Controller-Tabs.js"></script>
 		<script src="js/Controller-Comments.js"></script>
 		<script src="js/Directive-PokemonData.js"></script>
 		<script src="js/Directive-PokemonComments.js"></script>
+
 		<link rel="stylesheet" href="css/bootstrap.min.css">
     	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
 		<link rel="stylesheet" href="css/main.css">
@@ -37,90 +39,7 @@
 
 		<div class="container">
 
-			<div ng-controller="PokemonController as pkmCtrl">
-
-				<h1>{{pkmCtrl.pokemon.name}} #{{pkmCtrl.pokemon.id}}</h1>
-
-				<h2>{{pkmCtrl.pokemon.species}}</h2>
-
-				<img src="img/pokemons/{{pkmCtrl.pokemon.name | lowercase}}.jpg">
-
-				<div ng-controller="TabsController as tabs">
-
-					<ul class="nav nav-tabs nav-justified">
-		              <li ng-class = "{active : tabs.tab === 1}"><a ng-click="tabs.selectTab(1)">Pokédex</a></li>
-		              <li ng-class = "{active : tabs.tab === 2}"><a ng-click="tabs.selectTab(2)">Stats</a></li>
-		              <li ng-class = "{active : tabs.tab === 3}"><a ng-click="tabs.selectTab(3)">Evolution</a></li>
-		            </ul>
-
-		            <div class="tab-content">
-
-		            	<div ng-show="tabs.tab === 1"> <!-- Pokedex -->
-
-							<pokemon-data></pokemon-data>
-
-						</div> <!-- *********** -->
-
-
-						  <!-- Stats -->
-			              <div ng-show="tabs.tab === 2">
-			                <ul class="list-group">
-			                  <li class="list-group-item">
-			                    <strong>HP</strong>
-			                    <span class="badge">{{pkmCtrl.pokemon.stats.hp}}</span>
-			                  </li>
-			                  <li class="list-group-item">
-			                    <strong>Attack</strong>
-			                    <span class="badge">{{pkmCtrl.pokemon.stats.attack}}</span>
-			                  </li>
-			                  <li class="list-group-item">
-			                    <strong>Defense</strong>
-			                    <span class="badge">{{pkmCtrl.pokemon.stats.defense}}</span>
-			                  </li>
-			                  <li class="list-group-item">
-			                    <strong>Special Attack</strong>
-			                    <span class="badge">{{pkmCtrl.pokemon.stats['sp.atk']}}</span>
-			                  </li>
-			                  <li class="list-group-item">
-			                    <strong>Special Defense</strong>
-			                    <span class="badge">{{pkmCtrl.pokemon.stats['sp.def']}}</span>
-			                  </li>
-			                  <li class="list-group-item">
-			                    <strong>Speed</strong>
-			                    <span class="badge">{{pkmCtrl.pokemon.stats.speed}}</span>
-			                  </li>
-			                  <li class="list-group-item">
-			                    <strong>Total</strong>
-			                    <span class="badge">{{pkmCtrl.pokemon.stats.total}}</span>
-			                  </li>
-			                </ul>
-			              </div>
-
-
-			              <!-- Evolution -->
-			              <div ng-show="tabs.tab === 3">
-			                <div class="text-center" ng-repeat="pokemon in pkmCtrl.pokemon.evolution">
-			                  <a href="#">
-			                    <img src="img/pokemons/{{pokemon | lowercase}}.jpg" width="160">
-			                    <p>
-			                      <strong>{{pokemon}}</strong>
-			                    </p>
-			                  </a>
-			                  <span ng-hide="$last" class="glyphicon glyphicon-arrow-down"></span>
-			                </div>
-			              </div>
-
-					</div>
-
-				</div>
-
-				<!-- comments -->
-				<div ng-controller="CommentsController as cmtsCtrl">
-			        <pokemon-comments></pokemon-comments>
-		        </div>
-		        <!-- /comments -->
-
-			</div>
+			<div ng-view></div>
 
 		</div>
 
