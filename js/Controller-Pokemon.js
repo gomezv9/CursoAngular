@@ -1,10 +1,8 @@
 (function (){
 
-	angular.module('pokedex').controller('PokemonController', PokemonController);
-
-	function PokemonController(){
+	angular.module('pokedex').controller('PokemonController', ['$scope', function ($scope){
 		
-		this.pokemon = {
+		$scope.pokemon = {
 			id: 001,
 			name: 'Bulbasaur',
 			species: 'Seed Pokemon',
@@ -23,7 +21,7 @@
 			},
 			evolution: [ "Bulbasaur", "Ivysaur", "Venusaur" ]
 		};
-	}
+	}])
 
 
 })();

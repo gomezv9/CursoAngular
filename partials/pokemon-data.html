@@ -4,7 +4,7 @@
 
   	<span class="pull-right"> 
 
-	  	<span ng-repeat="type in pkmCtrl.pokemon.type" class="label type type-{{type | lowercase}}">
+	  	<span ng-repeat="type in pokemon.type" class="label type type-{{type | lowercase}}">
 
 	  		{{type}}
 
@@ -20,7 +20,7 @@
 
 	  	<span>
 
-	  		{{pkmCtrl.pokemon.height}}
+	  		{{pokemon.height}}
 
 	  	</span>
 
@@ -34,7 +34,7 @@
 
 	  	<span>
 
-	  		{{pkmCtrl.pokemon.weight}}
+	  		{{pokemon.weight}}
 
 	  	</span>
 
@@ -46,7 +46,7 @@
 
   	<span class="pull-right"> 
 
-	  	<span ng-repeat="ab in pkmCtrl.pokemon.abilities" class="label type type-dragon">
+	  	<span ng-repeat="ab in pokemon.abilities" class="label type type-dragon">
 
 	  		{{ab}}
 
