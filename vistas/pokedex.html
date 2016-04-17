@@ -3,9 +3,11 @@
     <h1>Pokédex</h1>
   </div>
   <div ng-repeat="pokemon in pokemons">
+  	<a href="#pokemon/{{pokemon.name | normalize}}">
     <h1>{{pokemon.name}} <small>{{pokemon.species}}</small></h1>
     <!--<img ng-src="{{pokemon.name | normalize | imageify}}">--> <!-- Se le puede pasar dos filtros -->
     <!--<img src="img/pokemons/{{pokemon.name | lowercase}}.jpg">-->
     <img ng-src="{{pokemon.name | imageify}}">
+	</a>
   </div>
 </div>

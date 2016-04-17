@@ -1,8 +1,15 @@
 (function (){
 
-	angular.module('pokedex').controller('PokemonController', ['$scope', function ($scope){
+	angular.module('pokedex').controller('PokemonController', ['$scope', 'pokemonService', '$routeParams' ,function ($scope, pokemonService, $routeParams){
+		var name = $routeParams.name; // nombre de la ruta que se pasa routeProvider 
+		$scope.pokemon = {};
+
+		pokemonService.byName(name)
+			.then(function (data){
+				$scope.pokemon = data;
+			});
 		
-		$scope.pokemon = {
+		/*$scope.pokemon = {
 			id: 001,
 			name: 'Bulbasaur',
 			species: 'Seed Pokemon',
@@ -20,7 +27,8 @@
 				total: 318
 			},
 			evolution: [ "Bulbasaur", "Ivysaur", "Venusaur" ]
-		};
+		};*/
+
 	}])
 
 

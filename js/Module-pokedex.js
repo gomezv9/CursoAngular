@@ -11,7 +11,7 @@
 		        templateUrl: 'vistas/pokedex.html',
 		        controller: 'PokedexController'
 		    })
-			.when('/pokemon/:id', {
+			.when('/pokemon/:name', {
 				templateUrl: 'vistas/pokemon.html',
 				controller: 'PokemonController',
 				controllerAs: 'pkmCtrl'
